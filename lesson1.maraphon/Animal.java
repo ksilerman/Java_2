@@ -49,7 +49,7 @@ public class Animal implements Competitor {
         }
     }
 
-    @Override
+  /*  @Override
     public boolean isDistance() {
         return onDistance;
     }
@@ -58,4 +58,5 @@ public class Animal implements Competitor {
     public void info() {
         System.out.println(type + " " +name+ " "+ onDistance);
     }
+    */
 }
