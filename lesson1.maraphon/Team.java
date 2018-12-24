@@ -1,9 +1,22 @@
 package lesson1.maraphon;
 
 public class Team {
-    Competitor[] comp = {new Human("Bob"), new Cat("Vaska"),new Dog("Tuzik")};
 
+   private String name;
+   private Competitor[] competitors;
 
+   public Team (String name, Competitor[] competitors){
+       this.name = name;
+       this.competitors = competitors;
+   }
+
+    public String getName() {
+        return name;
+    }
+
+    public Competitor[] getCompetitors() {
+        return competitors;
+    }
 }
 
 

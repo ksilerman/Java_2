@@ -5,7 +5,7 @@ public class MainCross {
     public static void main(String[] args) {
 
         Cource c = new Cource ();
-        Team comp = new Team ();
+        Team comp = new Team ("1" , {new Human("Bob"), new Cat("Vaska"),new Dog("Tuzik")});
 
         c.doIt(comp);
 
