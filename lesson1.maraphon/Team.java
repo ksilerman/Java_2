@@ -15,10 +15,7 @@ public class Team {
         return competitors;
     }
 
-    public void showResult () {
-        System.out.println(name + " " + active);
-       return ;
-    }
+
 }
 
 

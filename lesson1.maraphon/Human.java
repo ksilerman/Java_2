@@ -57,4 +57,7 @@ public class Human implements Competitor {
         System.out.println(name + " " + active);
     }
 
+    public String getName() {
+        return name;
+    }
 }
