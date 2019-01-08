@@ -16,8 +16,9 @@ public class PhoneBook {
     List<String> get(String name) {
         List<String> list = new ArrayList<>();
         for (Map.Entry<String, String> entry : pb.entrySet())
-            if (name.equals(entry.getValue()))
-                list.add(entry.getKey());
+            if (name.equals(entry.getKey()))
+                list.add(entry.getKey()+ " " + entry.getValue());
+
         return list;
     }
 
