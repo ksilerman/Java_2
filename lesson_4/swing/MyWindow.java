@@ -1,11 +1,8 @@
 package lesson_4.swing;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
-
 
 public class MyWindow extends JFrame {
 
@@ -13,48 +10,55 @@ public class MyWindow extends JFrame {
         setTitle("MyWindows");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(500, 300, 500, 400);
-        setLayout(null);
-
-//        setLayout(new GridLayout(3, 1));
+        setLayout(new GridLayout(2, 1));
 
 // textarea ------------------------------------------------
-
-
         JTextArea textArea = new JTextArea();
-        //textArea.setPreferredSize(new Dimension(30, 30));
-        textArea.setBounds(10, 10, 300, 50);
         JScrollPane scrollPane = new JScrollPane(textArea);
-        textArea.append("Мой текст \n");
+        textArea.append("Здесь будет отображаться вводимый текст \n");
         add(scrollPane);
         textArea.setEditable(false);
-
-
-
 //-----------------------------------------------------------
 
-
 // textfield-------------------------------------------------
+        JPanel text = new JPanel();
 
-        JTextField textField = new JTextField("text");
-        textField.setBounds(30, 130, 100, 100);
-
-        JButton button = new JButton("send");
-        button.setBounds(30, 200, 50, 30);
-
+        JTextField textField = new JTextField("введите текст");
+        textField.setPreferredSize(new Dimension(200, 30));
+        text.add(textField);
 
         textField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textArea.append(textField.getText() + "\n");
-                textField.setText("");
-                textField.grabFocus();
+                if (textField.getText().equals("")) {
+                    textArea.append("Вы ввели пустой текст" + "\n");
+                } else {
+                    textArea.append(textField.getText() + "\n");
+                    textField.setText("");
+                    textField.grabFocus();
+                }
             }
         });
 
+// button ----------------------------------------------------
+
+        JButton button = new JButton("Отправить");
+        button.setPreferredSize(new Dimension(100, 30));
+        text.add(button);
+
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (textField.getText().equals("")) {
+                    textArea.append("Вы ввели пустой текст" + "\n");
+                } else {
+                    textArea.append(textField.getText() + "\n");
+                    textField.setText("");
+                }
+            }
+        });
 //-----------------------------------------------------------
-        add(textArea);
-        add(textField);
-        add(button);
+        add(text);
         setVisible(true);
 
     }
