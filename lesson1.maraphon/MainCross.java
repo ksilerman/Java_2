@@ -5,9 +5,11 @@ public class MainCross {
     public static void main(String[] args) {
 
         Cource c = new Cource ();
-        Team comp = new Team ();
+        Team comp = new Team ("1" , new Human("Bob"), new Cat("Vaska"), new Dog("Tuzik") );
 
         c.doIt(comp);
+
+
 
   /*      Competitor[] competitors = {new Human("Bob"), new Cat("Vaska"),new Dog("Tuzik")};
         Obstracle[] obstracles = {new Cross(80),new Wall(5),new Water(3)};
