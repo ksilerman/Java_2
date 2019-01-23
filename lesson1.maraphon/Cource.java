@@ -2,11 +2,23 @@ package lesson1.maraphon;
 
 public class Cource {
 
-    Obstracle[] c = {new Cross(80),new Wall(5),new Water(3)};
+  private Obstracle[] c = {new Cross(80),new Wall(5),new Water(3)};
 
-    public void doIt(){
-        Cross(80);
-        Wall(5);
-        Water(3);
+    public void doIt(Team team){
+        System.out.println("Команда: " + team);
+        for (Competitor competitor : team.getCompetitors()) {
+            for (Obstracle obstracle : c) {
+                if (competitor.isDistance() == true) {
+                System.out.println(team.getCompetitors() + " успешно перепрыгнул");
+                obstracle.doIt(competitor);
+                } else {
+                    System.out.println(team.getCompetitors() + " не получилось");
+                }
+            }
+        }
+
     }
+
+
 }
+
